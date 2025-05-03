@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Magnitude Checker</title>
+  <style>
+    body {
+      background-color: #3e9f85;
+    }
+
+    h1 {
+      color: #e8dcbf;
+      margin: 30px;
+      background-color: #24574b;
+      text-align: center;
+    }
+
+    .button {
+      background-color: #24574b; /* You forgot to set a background color */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header"> 
+  <h1>INST</h1>
+</div>
+
+<form onsubmit="checkMagnitude(); return false;">
+  <label for="enterMagnitude">Enter Magnitude:</label>
+  <input type="text" id="enterMagnitude"><br><br>
+  <button type="submit" class="button">Verify</button>
+</form>
+
+<script>
+  function checkMagnitude() {
+    var magnitude = parseFloat(document.getElementById('enterMagnitude').value); 
+
+    if (magnitude >= 8) {
+      window.alert('Catastrophic');
+    } else if (magnitude >= 7 && magnitude <= 7.9) {
+      window.alert('Severe');
+    } else {
+      window.alert('Moderate or less');
+    }
+  }
+</script>
+
+</body>
+</html>
